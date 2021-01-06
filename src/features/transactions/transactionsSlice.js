@@ -10,7 +10,7 @@ export const transactionsSlice = createSlice({
     deleteTransaction: (state, action) => {
       const { id } = action.payload
       const index = state.findIndex(transaction => transaction.id === id)
-      state.splice(index)
+      state.splice(index, 1)
     },
   }
 });
