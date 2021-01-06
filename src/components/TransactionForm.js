@@ -5,16 +5,16 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default function TransactionForm({categories}) {
   const dispatch = useDispatch();
-  const [category, setCategory] = useState(null);
+  const [category, setCategory] = useState(CATEGORIES[0]);
   const [description, setDescription] = useState('');
   const [amount, setAmount] = useState(0);
 
   const handleSubmit = e => {
-    e.preventDefault()
-    dispatch(addTransaction({category: category, description: description, amount: amount, id: uuidv4()}))
-    setCategory(null)
-    setDescription('')
-    setAmount(0)
+    e.preventDefault();
+    dispatch(addTransaction({category: category, description: description, amount: amount, id: uuidv4()}));
+    setCategory(CATEGORIES[0]);
+    setDescription('');
+    setAmount(0);
   }
 
   return (
@@ -23,7 +23,7 @@ export default function TransactionForm({categories}) {
       <form onSubmit={handleSubmit}>
         <label for='category'>Category</label>
         <select id='category' value={category} onChange={e => setCategory(e.currentTarget.value)}>
-          <option value="" selected disabled hidden></option>
+          <option value={null} selected disabled hidden></option>
           { CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
         </select>
 
