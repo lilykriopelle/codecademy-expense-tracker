@@ -11,7 +11,7 @@ export default function TransactionForm({categories}) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(addTransaction({category: category, description: description, amount: amount, id: uuidv4()}));
+    dispatch(addTransaction({category: category, description: description, amount: parseFloat(amount), id: uuidv4()}));
     setCategory(CATEGORIES[0]);
     setDescription('');
     setAmount(0);

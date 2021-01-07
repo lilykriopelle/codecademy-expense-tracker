@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.budget-container {
+  margin: 20px;
+}
+
+.budget-form {
+  display: flex
+}

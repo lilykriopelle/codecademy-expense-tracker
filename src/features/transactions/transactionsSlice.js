@@ -19,6 +19,7 @@ export const transactionsSlice = createSlice({
   }
 });
 
+export const selectTransactionsByCategory = (state) => state.transactions;
 export const selectTransactions = (state) => Object.values(state.transactions).reduce((a,b) => [...a, ...b], []);
-export const { addTransaction, deleteTransaction } = transactionsSlice.actions
+export const { addTransaction, deleteTransaction } = transactionsSlice.actions;
 export default transactionsSlice.reducer;
