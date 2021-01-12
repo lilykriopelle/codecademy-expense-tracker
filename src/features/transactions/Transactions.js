@@ -1,12 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectTransactions } from './transactionsSlice';
+import { selectFlattenedTransactions } from './transactionsSlice';
 import TransactionForm from '../../components/TransactionForm';
 import TransactionList from '../../components/TransactionList';
 
 const Transactions = () => {
-  const transactions = useSelector(selectTransactions);
-
+  const transactions = useSelector(selectFlattenedTransactions);
   return (
     <div className='comments-container'>
       <TransactionForm />

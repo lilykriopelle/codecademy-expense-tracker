@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { editBudget } from '../features/budgets/budgetsSlice';
-import { selectTransactionsByCategory } from '../features/transactions/transactionsSlice';
+import { selectTransactions } from '../features/transactions/transactionsSlice';
 
 export default function Budget({budget}) {
   const dispatch = useDispatch();
   const [amount, setAmount] = useState(budget.amount);
-  const transactions = useSelector(selectTransactionsByCategory)
+  const transactions = useSelector(selectTransactions)
 
   const handleEdit = e => {
     e.preventDefault()
