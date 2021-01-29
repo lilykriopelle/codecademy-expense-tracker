@@ -7,9 +7,9 @@ import TransactionList from '../../components/TransactionList';
 const Transactions = () => {
   const transactions = useSelector(selectFlattenedTransactions);
   return (
-    <div className='comments-container'>
+    <div className="comments-container">
+      <TransactionList transactions={transactions} />
       <TransactionForm />
-      <TransactionList transactions={transactions}/>
     </div>
   );
 };
